@@ -6,7 +6,6 @@
  */
 
 
-#include <X11/Xlib.h>
 #include "posixTime.h"
 
 #include <stdio.h>

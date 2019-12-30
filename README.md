@@ -22,6 +22,15 @@ to tinker with any additional hardware.
 
 You need [gcc](https://gcc.gnu.org/) and [make](https://www.gnu.org/software/make/) installed.
 
+The project uses git submodules to include some Arduino libraries. To get them, you have to run
+
+```
+git submodule init
+git submodule update
+```
+
+after checking out the repository.
+
 ## X11
 
 To emulate a TFT this project uses X11. Therefore you have to install X11 support.

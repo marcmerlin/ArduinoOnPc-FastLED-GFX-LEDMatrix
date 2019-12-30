@@ -1,0 +1,15 @@
+[submodule "examples/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos"]
+	path = examples/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
+	url = https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
+[submodule "libraries/LEDMatrix"]
+	path = libraries/LEDMatrix
+	url = https://github.com/marcmerlin/LEDMatrix
+[submodule "libraries/Framebuffer_GFX"]
+	path = libraries/Framebuffer_GFX
+	url = https://github.com/marcmerlin/Framebuffer_GFX
+[submodule "libraries/FastLED"]
+	path = libraries/FastLED
+	url = https://github.com/MarcFork/FastLED
+[submodule "libraries/FastLED_TFTWrapper_GFX"]
+	path = libraries/FastLED_TFTWrapper_GFX
+	url = https://github.com/marcmerlin/FastLED_TFTWrapper_GFX

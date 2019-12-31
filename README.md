@@ -1,7 +1,15 @@
-# ArduinoOnPc
+# ArduinoOnPc FastLED::GFX LEDMatrix Fork
 
 ## What?
 
+I modified the original to display on an rPi using RGBPanels thanks to this driver:
+https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX
+ArduinoOnPC in used here to run Arduino code on Raspberry Pis to take advantage of
+the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying
+arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
+
+
+# Original Project Documentation (meant to be run on PCs for debugging):
 With this software you can run an Arduino Sketch on your PC.
 You don't need an Arduino hardware.
 The focus here is mainly on TFTs connected to an Arduino.
@@ -9,8 +17,8 @@ The focus here is mainly on TFTs connected to an Arduino.
 This software is made for Linux using the X11 window manager.
 If you want to use it on windows the only current option is a virtual machine.
 
-## Why?
 
+## Why?
 Some Arduino boards do not have a debugging possibility.
 To find the errors in your sketches it might be usefull to be able to use a debugger.
 Using this tool you can debug your program locally, and develop without having

@@ -8,6 +8,8 @@ ArduinoOnPC in used here to run Arduino code on Raspberry Pis to take advantage 
 the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying
 arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
 
+![image](https://user-images.githubusercontent.com/1369412/71642449-9cce0a80-2cab-11ea-876d-8c9bd6ef3b72.png)
+
 ## Original "What?" (when this project was only meant to be run on PCs for debugging):
 With this software you can run an Arduino Sketch on your PC.
 You don't need an Arduino hardware.

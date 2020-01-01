@@ -9,14 +9,12 @@ the extra CPU power, extra RAM, etc...  In my specific case, it also allows disp
 arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
 
 ## Original "What?" (when this project was only meant to be run on PCs for debugging):
-
 With this software you can run an Arduino Sketch on your PC.
 You don't need an Arduino hardware.
 The focus here is mainly on TFTs connected to an Arduino.
 
 This software is made for Linux using the X11 window manager.
 If you want to use it on windows the only current option is a virtual machine.
-
 
 ## Original "Why?" (also when this project was only meant to be run on PCs for debugging):
 

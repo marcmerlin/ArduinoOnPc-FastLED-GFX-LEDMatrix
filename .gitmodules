@@ -13,3 +13,9 @@
 [submodule "libraries/FastLED_TFTWrapper_GFX"]
 	path = libraries/FastLED_TFTWrapper_GFX
 	url = https://github.com/marcmerlin/FastLED_TFTWrapper_GFX
+[submodule "libraries/FastLED_RPIRGBPanel_GFX"]
+	path = libraries/FastLED_RPIRGBPanel_GFX
+	url = https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX
+[submodule "rpi-rgb-led-matrix"]
+	path = rpi-rgb-led-matrix
+	url = https://github.com/hzeller/rpi-rgb-led-matrix/

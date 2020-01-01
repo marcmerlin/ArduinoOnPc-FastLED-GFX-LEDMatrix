@@ -29,6 +29,8 @@ CXXFLAGS += -DARDUINOONPC
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -L/usr/X11R6/lib -lX11  # include X11 library
 LDFLAGS += -pthread                # include linux thread library
+# comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
+LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
 #LDFLAGS += $(shell sdl2-config --libs)
 
 DEPDIR := $(BUILD_ROOT)
@@ -46,6 +48,8 @@ endef
 
 INCLUDES += -I$(SKETCH_ROOT)
 INCLUDES += -I$(NATIVE_ROOT)/src/cores/arduino -I$(NATIVE_ROOT)/src/system
+# comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
+INCLUDES += -I$(NATIVE_ROOT)/rpi-rgb-led-matrix/include
 $(eval $(call add_lib,$(NATIVE_ROOT)/src))
 
 $(foreach lib, $(ARDUINO_LIBS), $(eval $(call add_lib,$(NATIVE_ROOT)/libraries/$(lib))))

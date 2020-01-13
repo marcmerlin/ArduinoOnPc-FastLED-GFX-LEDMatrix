@@ -13,6 +13,10 @@ Blog post with details: http://marc.merlins.org/perso/arduino/post_2020-01-01_Ru
 After you run git submodules init, you will find my suite of demos from
 https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
 
+Please see this code to see how to use the driver:
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/022257656e2f1beabe327e88bb96747c0fc955f9/neomatrix_config.h#L262
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/022257656e2f1beabe327e88bb96747c0fc955f9/neomatrix_config.h#L697
+
 ![image](https://user-images.githubusercontent.com/1369412/71642449-9cce0a80-2cab-11ea-876d-8c9bd6ef3b72.png)
 
 ## Original "What?" (when this project was only meant to be run on PCs for debugging):

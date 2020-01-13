@@ -8,6 +8,11 @@ ArduinoOnPC in used here to run Arduino code on Raspberry Pis to take advantage 
 the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying
 arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
 
+Blog post with details: http://marc.merlins.org/perso/arduino/post_2020-01-01_Running-FastLED_-Adafruit_GFX_-and-LEDMatrix-code-on-High-Resolution-RGBPanels-with-a-Raspberry-Pi.html
+
+After you run git submodules init, you will find my suite of demos from
+https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
+
 ![image](https://user-images.githubusercontent.com/1369412/71642449-9cce0a80-2cab-11ea-876d-8c9bd6ef3b72.png)
 
 ## Original "What?" (when this project was only meant to be run on PCs for debugging):

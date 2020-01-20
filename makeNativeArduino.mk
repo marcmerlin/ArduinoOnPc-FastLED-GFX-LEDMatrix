@@ -29,7 +29,7 @@ LDFLAGS += -L/usr/X11R6/lib -lX11  # include X11 library
 LDFLAGS += -pthread                # include linux thread library
 # comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
 
-ifneq ($(shell uname -m),x86_64)
+ifneq ($(shell uname -m |grep arm),)
 #pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"
 LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
 else

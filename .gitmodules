@@ -19,3 +19,6 @@
 [submodule "rpi-rgb-led-matrix"]
 	path = rpi-rgb-led-matrix
 	url = https://github.com/hzeller/rpi-rgb-led-matrix/
+[submodule "libraries/FastLED_NeoMatrix"]
+	path = libraries/FastLED_NeoMatrix
+	url = https://github.com/marcmerlin/FastLED_NeoMatrix

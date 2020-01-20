@@ -17,21 +17,27 @@ CFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CFLAGS += -std=gnu11
 CFLAGS += -lm
 CFLAGS += -DARDUINOONPC
-#CFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags)
 
 CXXFLAGS += -Wall -Wextra -Wno-unused-parameter
 CXXFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CXXFLAGS += -Wno-class-memaccess # FastLED does some naughty things
 CXXFLAGS += -std=gnu++11
 CXXFLAGS += -DARDUINOONPC
-#CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags)
 
 LDFLAGS += -Wl,--gc-sections
 LDFLAGS += -L/usr/X11R6/lib -lX11  # include X11 library
 LDFLAGS += -pthread                # include linux thread library
 # comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
+
+ifneq ($(shell uname -m),x86_64)
+#pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"
 LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
-#LDFLAGS += $(shell sdl2-config --libs)
+else
+ifeq ($(LINUX_RENDERER_SDL),yes)
+CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags) -DLINUX_RENDERER_SDL -DLINUX_RENDERER_SDL_MAIN_DELAY=$(LINUX_RENDERER_SDL_MAIN_DELAY)
+LDFLAGS += $(shell sdl2-config --libs)
+endif
+endif
 
 DEPDIR := $(BUILD_ROOT)
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPDIR)/$*.Td
@@ -77,6 +83,7 @@ clean:
 	rm $(TARGET)
 
 print:
+	@echo "LINUX_RENDERER_SDL:\t $(LINUX_RENDERER_SDL)"
 	@echo "BUILD_ROOT:\t $(BUILD_ROOT)"
 	@echo "INCLUDES:\t $(INCLUDES)"
 	@echo "OBJECTS:\t $(OBJECTS)"
@@ -86,7 +93,9 @@ print:
 	@echo "SRC_C   :\t $(SRC_C)"
 	@echo "SRC_CXX :\t $(SRC_CXX)"
 	@echo "SRC_USER:\t $(SRC_USER)"
-	@echo ":\t $(INC_USER_FOLDERS)"
+	@echo "INC_USER_FOLDERS:\t $(INC_USER_FOLDERS)"
+	@echo "CXXFLAGS :\t $(CXXFLAGS)"
+	@echo "LDFLAGS:\t $(LDFLAGS)"
 
 
 $(BUILD_ROOT)/%.o : %.c $(DEPDIR)/%.d

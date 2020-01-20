@@ -44,6 +44,11 @@ int main()
 	{
 		loop();
 		delayMicroseconds(10); // leave a little bit calculation time to other applications
+#ifdef LINUX_RENDERER_SDL
+		// SDL rendering is much faster than FastLED pixel pushing, so we add a delay to emulate
+		// the delay you'd get from real LEDs like WS2812B
+		delay(LINUX_RENDERER_SDL_MAIN_DELAY);
+#endif
 	}
 
 	//closeScreen();

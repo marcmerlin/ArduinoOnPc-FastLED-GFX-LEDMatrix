@@ -1,5 +1,8 @@
 # ArduinoOnPc FastLED::GFX LEDMatrix Fork
 
+
+Blog post with details: http://marc.merlins.org/perso/arduino/post_2020-01-01_Running-FastLED_-Adafruit_GFX_-and-LEDMatrix-code-on-High-Resolution-RGBPanels-with-a-Raspberry-Pi.html
+
 ## What?
 
 With this software you can run an Arduino Sketch on your PC and is specifically designed to test code written for any of:
@@ -22,6 +25,12 @@ ArduinoOnPC is used here to run Arduino code on Raspberry Pis to take advantage 
 the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying
 arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
 
+After you run git submodules init, you will find my suite of demos from
+https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
+
+
+## Three display drivers: SDL (default on linux/intel), X11 (non default, slow, linux/intel), RGBPanel (linux/rPi)
+
 For development/Debugging, you can also run on PC using the (slow) X11 output or faster SDL output.
 https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/blob/master/examples/Makefile  
 is used to select X11 vs SDL rendering on linux/intel. rPi is auto detected in 
@@ -30,14 +39,27 @@ https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/blob/952bb957162
 In turn this affects 
 https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L39  which will use one of the 3 available rendering backend for ArduinoOnPc.
 
-Blog post with details: http://marc.merlins.org/perso/arduino/post_2020-01-01_Running-FastLED_-Adafruit_GFX_-and-LEDMatrix-code-on-High-Resolution-RGBPanels-with-a-Raspberry-Pi.html
 
-After you run git submodules init, you will find my suite of demos from
-https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
-
+### SDL Driver
 Please see this code to see how to use the driver:
-* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/022257656e2f1beabe327e88bb96747c0fc955f9/neomatrix_config.h#L262
-* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/022257656e2f1beabe327e88bb96747c0fc955f9/neomatrix_config.h#L697
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L48
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L268
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L722
+
+![102_demo_snaps](https://user-images.githubusercontent.com/1369412/71480161-a982c800-27ac-11ea-8f0e-fb149b6a9ae2.jpg)
+![103_demo_snaps](https://user-images.githubusercontent.com/1369412/71480163-abe52200-27ac-11ea-9cb1-f4d23bdf96ac.jpg)
+
+### X11 Driver
+Please see this code to see how to use the driver:
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L44
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L239
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L716
+
+### Rpi RGBPanel Driver
+Please see this code to see how to use the driver:
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L40
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L293
+* https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L727
 
 ![image](https://user-images.githubusercontent.com/1369412/71642449-9cce0a80-2cab-11ea-876d-8c9bd6ef3b72.png)
 

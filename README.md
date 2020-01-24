@@ -46,6 +46,8 @@ Please see this code to see how to use the driver:
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L268
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L722
 
+Because the SDL driver is much faster than talking to real FastLED, the code for linux introduces a slowdown delay (LINUX_RENDERER_SDL_MAIN_DELAY) defined here: https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/blob/19e23178f66363e95ebd818822b49fcc4ea26db7/examples/Makefile#L7
+
 ![102_demo_snaps](https://user-images.githubusercontent.com/1369412/71480161-a982c800-27ac-11ea-8f0e-fb149b6a9ae2.jpg)
 ![103_demo_snaps](https://user-images.githubusercontent.com/1369412/71480163-abe52200-27ac-11ea-9cb1-f4d23bdf96ac.jpg)
 

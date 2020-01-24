@@ -2,11 +2,33 @@
 
 ## What?
 
-I modified the original to display on an rPi using RGBPanels thanks to this driver:
+With this software you can run an Arduino Sketch on your PC and is specifically designed to test code written for any of:
+- https://github.com/marcmerlin/Framebuffer_GFX (base class)
+- https://github.com/pixelmatix/SmartMatrix
+- https://github.com/adafruit/Adafruit-GFX-Library
+- https://github.com/FastLED/FastLED  
+- https://github.com/marcmerlin/LEDMatrix  
+using SDL on Linux
+
+If you have run code that runs on any of:
+- https://github.com/marcmerlin/FastLED_NeoMatrix/
+- https://github.com/marcmerlin/SmartMatrix_GFX/
+- https://github.com/marcmerlin/FastLED_SPITFT_GFX (SSD1331, ILI9341, and ST7735 TFTs)  
+it can then run with this linux/SDL backend too.
+
+I modified the upstream ArduinoOnPC to display on an rPi using RGBPanels thanks to this driver:
 https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX
-ArduinoOnPC in used here to run Arduino code on Raspberry Pis to take advantage of
+ArduinoOnPC is used here to run Arduino code on Raspberry Pis to take advantage of
 the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying
 arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
+
+For development/Debugging, you can also run on PC using the (slow) X11 output or faster SDL output.
+https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/blob/master/examples/Makefile  
+is used to select X11 vs SDL rendering on linux/intel. rPi is auto detected in 
+https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/blob/952bb957162238dc0ef6cbb0c3355e1c48959500/makeNativeArduino.mk#L32  
+
+In turn this affects 
+https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L39  which will use one of the 3 available rendering backend for ArduinoOnPc.
 
 Blog post with details: http://marc.merlins.org/perso/arduino/post_2020-01-01_Running-FastLED_-Adafruit_GFX_-and-LEDMatrix-code-on-High-Resolution-RGBPanels-with-a-Raspberry-Pi.html
 
@@ -85,8 +107,17 @@ will not require it.
 
 ### Makefile
 
+
 ```
-# cd into any example in examples folder, for example:
+# GFX examples that use either SDL (default on intel), X11, or RGBPanel (Default on rPi) output:
+cd examples/GFX_Sublime_Demos/
+examples/GFX_Sublime_Demos$ make
+examples/GFX_Sublime_Demos$ ./Sublime_Demo
+# Use numeric keypad + to make brighter or n/p to select demo
+```
+
+```
+# Original examples that only compile with the slow X11 backend (not prefixed by GFX_):
 cd examples/Adafruit_touchpaint
 
 # Compile the code

@@ -121,9 +121,12 @@ cd rpi-rgb-led-matrix; make
 If you don't use my special rPI RGBPanel driver ( https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX ), 
 to emulate a TFT this project then uses X11. Therefore you have to install X11 support, something like:
 ```
-sudo apt-get install libx11-dev
-sudo pacman -Sy libx11
-yum install libx11
+sudo apt-get install libx11-dev electric-fence
+sudo pacman -Sy libx11 electric-fence
+yum install libx11 electric-fence
+
+electric-fence is optional, but recommended since it helps find buffer overruns.
+If you don't install it, remove it from makeNativeArduino.mk .
 ```
 
 BUG: Even if you use the RGB Panel output, compilation will likely needlessly require X11 even if the end binary

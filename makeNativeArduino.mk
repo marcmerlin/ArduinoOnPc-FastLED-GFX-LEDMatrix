@@ -12,13 +12,13 @@ TARGET := $(shell basename -s .ino $(SKETCH))
 
 $(shell mkdir -p $(BUILD_ROOT))
 
-CFLAGS += -Wall -Wextra -Wno-unused-parameter
+CFLAGS += -Wall -Wextra -Wno-unused-parameter -g
 CFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CFLAGS += -std=gnu11
 CFLAGS += -lm
 CFLAGS += -DARDUINOONPC
 
-CXXFLAGS += -Wall -Wextra -Wno-unused-parameter
+CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -g
 CXXFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CXXFLAGS += -Wno-class-memaccess # FastLED does some naughty things
 CXXFLAGS += -std=gnu++11
@@ -36,6 +36,10 @@ else
 ifeq ($(LINUX_RENDERER_SDL),yes)
 CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags) -DLINUX_RENDERER_SDL -DLINUX_RENDERER_SDL_MAIN_DELAY=$(LINUX_RENDERER_SDL_MAIN_DELAY)
 LDFLAGS += $(shell sdl2-config --libs)
+else
+# SDL seems to be incompatible with electric fence but X11 is not
+# apt-get install electric-fence, catch array/malloc errors
+LDFLAGS += -lefence
 endif
 endif
 

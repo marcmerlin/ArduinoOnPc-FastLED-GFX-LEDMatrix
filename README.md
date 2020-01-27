@@ -7,21 +7,19 @@ Blog posts with details:
 
 ## What?
 
-With this software you can run an Arduino Sketch on your PC and is specifically designed to test code written for any of:
+With this software you can run an Arduino Sketch on your PC using eiher SDL or X11 on linux. It is specifically designed to test code written for any of:
 - https://github.com/marcmerlin/Framebuffer_GFX (base class)
 - https://github.com/pixelmatix/SmartMatrix
 - https://github.com/adafruit/Adafruit-GFX-Library
 - https://github.com/FastLED/FastLED  
 - https://github.com/marcmerlin/LEDMatrix  
-using SDL on Linux
 
-If you have run code that runs on any of:
+If you have run code that runs on any of those 2D backends, then it will run on this linux X11/SDL backend too:
 - https://github.com/marcmerlin/FastLED_NeoMatrix/
 - https://github.com/marcmerlin/SmartMatrix_GFX/
 - https://github.com/marcmerlin/FastLED_SPITFT_GFX (SSD1331, ILI9341, and ST7735 TFTs)  
-it can then run with this linux/SDL backend too.
 
-I modified the upstream ArduinoOnPC to display on an rPi using RGBPanels thanks to this driver:
+I also modified the upstream ArduinoOnPC to display on an rPi using RGBPanels thanks to this driver:
 https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX
 ArduinoOnPC is used here to run Arduino code on Raspberry Pis to take advantage of
 the extra CPU power, extra RAM, etc...  In my specific case, it also allows displaying

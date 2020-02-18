@@ -22,3 +22,6 @@
 [submodule "libraries/FastLED_NeoMatrix"]
 	path = libraries/FastLED_NeoMatrix
 	url = https://github.com/marcmerlin/FastLED_NeoMatrix
+[submodule "libraries/LEDSprites"]
+	path = libraries/LEDSprites
+	url = https://github.com/AaronLiddiment/LEDSprites/

@@ -12,13 +12,13 @@ TARGET := $(shell basename -s .ino $(SKETCH))
 
 $(shell mkdir -p $(BUILD_ROOT))
 
-CFLAGS += -j8 -Wall -Wextra -Wno-unused-parameter -g
+CFLAGS += -Wall -Wextra -Wno-unused-parameter -g
 CFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CFLAGS += -std=gnu11
 CFLAGS += -lm
 CFLAGS += -DARDUINOONPC
 
-CXXFLAGS += -j8 -Wall -Wextra -Wno-unused-parameter -g
+CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -g
 CXXFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
 CXXFLAGS += -Wno-class-memaccess # FastLED does some naughty things
 CXXFLAGS += -std=gnu++11

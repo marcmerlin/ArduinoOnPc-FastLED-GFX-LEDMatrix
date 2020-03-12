@@ -1,9 +1,17 @@
+# ASAN=yes make to get memory debugging
+# https://github.com/google/sanitizers/wiki/AddressSanitizer
+ifneq ($(ASAN),)
+CFLAGS += -fsanitize=address
+CXXFLAGS += -fsanitize=address
+LDFLAGS += -fsanitize=address
+endif
+
 penultimateword = $(wordlist $(words $1),$(words $1), x $1)
 
 SKETCH_ROOT := $(shell dirname $(abspath $(call penultimateword, $(MAKEFILE_LIST))))
 NATIVE_ROOT := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 
-Q ?= @
+#Q ?= @
 
 BUILD_ROOT ?= build
 SKETCH ?= $(shell find $(SKETCH_ROOT) -maxdepth 1 -name "*.ino")
@@ -20,7 +28,7 @@ CFLAGS += -DARDUINOONPC
 
 CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -g
 CXXFLAGS += -DARDUINO=101 -DSKETCH_FILE=\"$(SKETCH)\"
-CXXFLAGS += -Wno-class-memaccess # FastLED does some naughty things
+#CXXFLAGS += -Wno-class-memaccess # FastLED does some naughty things, not supported by gcc on arm
 CXXFLAGS += -std=gnu++11
 CXXFLAGS += -DARDUINOONPC
 
@@ -36,10 +44,6 @@ else
 ifeq ($(LINUX_RENDERER_SDL),yes)
 CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags) -DLINUX_RENDERER_SDL -DLINUX_RENDERER_SDL_MAIN_DELAY=$(LINUX_RENDERER_SDL_MAIN_DELAY)
 LDFLAGS += $(shell sdl2-config --libs)
-else
-# SDL seems to be incompatible with electric fence but X11 is not
-# apt-get install electric-fence, catch array/malloc errors
-LDFLAGS += -lefence
 endif
 endif
 

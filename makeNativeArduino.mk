@@ -38,6 +38,16 @@ LDFLAGS += -pthread                # include linux thread library
 # comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
 
 ifneq ($(shell uname -m |grep arm),)
+CXXFLAGS += -DRPIRGBPANEL
+ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
+CXXFLAGS += -DRPI4
+else
+ifneq ($(shell grep 'Raspberry Pi 3' /proc/device-tree/model),)
+CXXFLAGS += -DRPI3
+else
+CXXFLAGS += -DRPILT3
+endif
+endif
 #pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"
 LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
 else

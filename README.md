@@ -28,6 +28,10 @@ arduino code on the faster and more capable rpi-rgb-led-matrix RGBPanel driver.
 After you run git submodules init, you will find my suite of demos from
 https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos
 
+## How?
+
+See this example, it shows FastLED code running in a 2D matrix and ultimately rendered on RGBPanels on rPi:
+https://github.com/marcmerlin/ArduinoOnPc-FastLED-GFX-LEDMatrix/tree/master/examples/GFX_Sublime_Demos
 
 ## Three display drivers: SDL (default on linux/intel), X11 (non default, slow, linux/intel), RGBPanel (linux/rPi)
 

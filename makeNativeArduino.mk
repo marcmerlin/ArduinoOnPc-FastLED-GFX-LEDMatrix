@@ -64,8 +64,8 @@ POSTCOMPILE = @mv -f $(DEPDIR)/$*.Td $(DEPDIR)/$*.d && touch $@
 define add_lib
 SRC_C    += $(shell find $1 -name '*.c')
 SRC_CXX  += $(shell find $1 -name '*.cpp')
-SRC_USER_C = $(shell find $(SKETCH_ROOT) -name "*.c")
-SRC_USER_CXX = $(shell find $(SKETCH_ROOT) -name "*.cpp")
+SRC_USER_C = $(shell find $(SKETCH_ROOT) -name "*.c"     | grep -v '\.vscode')
+SRC_USER_CXX = $(shell find $(SKETCH_ROOT) -name "*.cpp" | grep -v '\.vscode')
 
 INCLUDES += -I$1
 endef

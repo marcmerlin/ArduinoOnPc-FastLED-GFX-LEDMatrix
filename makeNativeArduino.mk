@@ -64,8 +64,8 @@ POSTCOMPILE = @mv -f $(DEPDIR)/$*.Td $(DEPDIR)/$*.d && touch $@
 define add_lib
 SRC_C    += $(shell find $1 -name '*.c')
 SRC_CXX  += $(shell find $1 -name '*.cpp')
-SRC_USER_C = $(shell find $(SKETCH_ROOT) -name "*.c"     | grep -v '\.vscode')
-SRC_USER_CXX = $(shell find $(SKETCH_ROOT) -name "*.cpp" | grep -v '\.vscode')
+SRC_USER_C = $(shell find $(SKETCH_ROOT) -name "*.c"     | grep -Ev '\.(vscode|git)')
+SRC_USER_CXX = $(shell find $(SKETCH_ROOT) -name "*.cpp" | grep -Ev '\.(vscode|git)')
 
 INCLUDES += -I$1
 endef
@@ -78,7 +78,7 @@ $(eval $(call add_lib,$(NATIVE_ROOT)/src))
 
 $(foreach lib, $(ARDUINO_LIBS), $(eval $(call add_lib,$(NATIVE_ROOT)/libraries/$(lib))))
 
-USER_FOLDERS = $(shell find $(SKETCH_ROOT) -path $(SKETCH_ROOT)/build -prune -o -type d -print)
+USER_FOLDERS = $(shell find $(SKETCH_ROOT) -path $(SKETCH_ROOT)/build -prune -o -type d -print  | grep -Ev '\.(vscode|git)')
 INC_USER_FOLDERS = $(foreach folder, $(USER_FOLDERS), -I$(folder))
 
 

@@ -1,0 +1,1 @@
+../NeoMatrix-FastLED-IR/demos/AnimatedGIFs/animatedgif_config.h

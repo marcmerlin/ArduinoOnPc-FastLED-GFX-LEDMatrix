@@ -1,4 +1,5 @@
-# ASAN=yes make to get memory debugging
+# To get memory debugging:
+# unset LD_PRELOAD ; export ASAN=yes; make
 # https://github.com/google/sanitizers/wiki/AddressSanitizer
 ifneq ($(ASAN),)
 CFLAGS += -fsanitize=address

@@ -18,17 +18,18 @@
 // Comment this out to get all the patterns -- merlin
 #define BESTPATTERNS
 #ifdef BESTPATTERNS
-// 82 and 89 are similar     55 and 102 are similar
+// 82 and 89 are similar     
+// 55 and 102 are similar, 112 is somewhat similar
+// 89 and 94 and 98 are similar
+// 110 and 151 are similar
+// 121 and 122 similar
+// 132 134 are similar, 134 looks better with reflections
 uint8_t bestpatterns[] = {
-    //   3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 102, 109, 111, 132,
-//   4, 10, 11, 25, 67, 70, 73, 77, 80, 86, 104, 105, 110,    // good in original tmed
-//   20, 89, 94, 101, 124, 128, 134, 143, 145, 155,// good but not picked for Neomatrix
+   3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 87, 102, 108, 109, 111, 115, 124, 134, 139, 155, // new patterns to add to FastLED_IR
+   4, 10, 11, 16, 18, 25, 67, 70, 73, 77, 80, 86, 104, 105, 110,  // good in original tmed
+   19, 20, 26, 81, 89, 94, 96, 98, 101, 103, 107, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 134, 139, 141, 143, 144, 145, 147, 149, 151, 158    // good but not picked for FastLED_IR
 
-//, 3, 8, 10, 11, 14, 17, 20, 25, 26, 55, 58, 59, 61, 67, 69, 70, 72, 73, 77, 80, 82, 86, 89, 94, 101, 102, 104, 105, 109, 110, 111, 124, 128, 132, 134, 143, 145, 155, 
-
-// Selection for picture frame:
-3, 4, 7, 8, 10, 11, 12, 14, 16, 17, 18, 19, 20, 21, 25, 26, 55, 58, 59, 61, 67, 69, 70, 72, 73, 77, 79, 80, 81, 82, 84, 86, 87, 89, 90, 94, 96, 98, 99, 101, 102, 103, 104, 105, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 118, 119, 120, 121, 122, 124, 126, 128, 130, 131, 132, 134, 139, 141, 144, 147, 148, 149, 151, 155, 158, 159, 
-// bad hack to avoid patterns that crash at resolutions higher than 256
+// Aurora does not work well at resolutions over 256 wide or high or more than 64K pixels.
 // My RPI3 has a lower dispay and the RPI4 has a display that is too big
 #ifndef RPI4
 163, 166

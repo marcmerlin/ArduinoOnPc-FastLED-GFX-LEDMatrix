@@ -18,12 +18,14 @@
 // Comment this out to get all the patterns -- merlin
 #define BESTPATTERNS
 #ifdef BESTPATTERNS
+// 16 and 17 are similar     
 // 82 and 89 are similar     
 // 55 and 102 are similar, 112 is somewhat similar
 // 89 and 94 and 98 are similar
 // 110 and 151 are similar
 // 121 and 122 similar
 // 132 134 are similar, 134 looks better with reflections
+// fix 45 to work for the whole height
 uint8_t bestpatterns[] = {
    3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 87, 102, 108, 109, 111, 115, 124, 134, 139, 155, // new patterns to add to FastLED_IR
    4, 10, 11, 16, 18, 25, 67, 70, 73, 77, 80, 86, 104, 105, 110,  // good in original tmed

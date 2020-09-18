@@ -27,9 +27,9 @@
 // 132 134 are similar, 134 looks better with reflections
 // fix 45 to work for the whole height
 uint8_t bestpatterns[] = {
-   3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 87, 102, 108, 109, 111, 115, 124, 134, 139, 155, // new patterns to add to FastLED_IR
-   4, 10, 11, 16, 18, 25, 67, 70, 73, 77, 80, 86, 104, 105, 110,  // good in original tmed
-   19, 20, 26, 81, 89, 94, 96, 98, 101, 103, 107, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 134, 139, 141, 143, 144, 145, 147, 149, 151, 158,    // good but not picked for FastLED_IR
+   3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 87, 102, 108, 109, 115, 124, 134, 139, 155, // 111, new patterns to add to FastLED_IR
+   4, 10, 11, 16, 18, 25, 67, 70, 73, 77, 80, 86, 104, 105, // 110,  // good in original tmed
+   19, 20, 26, 81, 89, 94, 96, 98, 101, 103, 107, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 134, 139, 141, 143, 144, 145, 147, 149, 151, 158    // good but not picked for FastLED_IR
 
 // Aurora does not work well at resolutions over 256 wide or high or more than 64K pixels.
 // My RPI3 has a lower dispay and the RPI4 has a display that is too big

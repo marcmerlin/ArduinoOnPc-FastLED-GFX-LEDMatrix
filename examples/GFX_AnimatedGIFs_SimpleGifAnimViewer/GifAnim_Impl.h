@@ -1,1 +1,0 @@
-../GFX_AnimatedGIFs/GifAnim_Impl.h

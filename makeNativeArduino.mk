@@ -38,6 +38,8 @@ LDFLAGS += -L/usr/X11R6/lib -lX11  # include X11 library
 LDFLAGS += -pthread                # include linux thread library
 # comment this out if you arne't using https://github.com/hzeller/rpi-rgb-led-matrix/
 
+# Copy a string like these in this file: M384BY256 M192BY160 M128BY192
+CXXFLAGS += -DGFXDISPLAY_$(shell cat /root/NM/gfxdisplay)
 ifneq ($(shell uname -m |grep arm),)
 CXXFLAGS += -DRPIRGBPANEL
 ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)

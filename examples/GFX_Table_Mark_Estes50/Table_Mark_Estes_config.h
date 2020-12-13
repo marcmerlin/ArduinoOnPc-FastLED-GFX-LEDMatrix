@@ -16,20 +16,26 @@
 
 // This allows a selection of only my favourite patterns.
 // Comment this out to get all the patterns -- merlin
-#define BESTPATTERNS
+//#define BESTPATTERNS
 #ifdef BESTPATTERNS
 // 16 and 17 are similar     
 // 82 and 89 are similar     
 // 55 and 102 are similar, 112 is somewhat similar
+// 85 and 87 are very close
 // 89 and 94 and 98 are similar
+// 75 twirls
 // 110 and 151 are similar
 // 121 and 122 similar
 // 132 134 are similar, 134 looks better with reflections
 // fix 45 to work for the whole height
 uint8_t bestpatterns[] = {
-   3, 8, 14, 17, 26, 55, 58, 59, 61, 69, 72, 82, 87, 102, 108, 109, 111, 115, 124, 134, 139, 155, // new patterns to add to FastLED_IR
+   3, 14, 26, 23, 26, 55, 62, 66, 69, 82, 87, 102, 108, 109, 111, 115, 124, 134, 139, 155, // new patterns to add to FastLED_IR
+       // update 4 code + 16 + 19 + 67
    4, 10, 11, 16, 18, 25, 67, 70, 73, 77, 80, 86, 104, 105, 110,  // good in original tmed
-   19, 20, 26, 81, 89, 94, 96, 98, 101, 103, 107, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 134, 139, 141, 143, 144, 145, 147, 149, 151, 158,    // good but not picked for FastLED_IR
+
+   17, 19, 20, 45, 53, 55, 58, 59, 66, 72, 75, 79, 81, 88, 89, 94, 96, 98, 101, 103, 107, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 134, 139, 141, 143, 144, 145, 147, 149, 151, 158,    // good but not picked for FastLED_IR
+
+// 144, 145, 146, 147, 149, 150, 151, 155, 158, 162,~170,185, 186, 187 189
 
 // Aurora does not work well at resolutions over 256 wide or high or more than 64K pixels.
 // My RPI3 has a lower dispay and the RPI4 has a display that is too big

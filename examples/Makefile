@@ -18,6 +18,7 @@ ARDUINO_LIBS += FastLED_RPIRGBPanel_GFX
 ARDUINO_LIBS += Adafruit_GFX
 ARDUINO_LIBS += LEDMatrix
 ARDUINO_LIBS += LEDSprites
+ARDUINO_LIBS += LEDText
 
 BUILD_ROOT := build
 include ../../makeNativeArduino.mk

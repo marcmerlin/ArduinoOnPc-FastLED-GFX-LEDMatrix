@@ -16,7 +16,7 @@
 
 // This allows a selection of only my favourite patterns.
 // Comment this out to get all the patterns -- merlin
-#define BESTPATTERNS
+//#define BESTPATTERNS
 #ifdef BESTPATTERNS
 // 4 and 189 are similar
 // 16 and 17 are similar     

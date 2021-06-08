@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dir="$(basename $(pwd))"
+
+for i in Attractor.h Boid.h Drawable.h Effects.h Geometry.h matrix.h PatternAttract.h PatternBounce.h PatternCube.h PatternFlock.h PatternFlowField.h PatternIncrementalDrift2.h PatternIncrementalDrift.h PatternPendulumWave.h PatternRadar.h PatternSpiral.h PatternSpiro.h PatternSwirl.h PatternWave.h "$dir.ino" Table_Mark_Estes_config.h Table_Mark_Estes_Impl.h Vector.h;
+do
+    ln -sf ../FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/LEDMatrix/"$dir/$i"
+done
+
+for i in Makefile neomatrix_config.h; do ln -sf ../$i; done

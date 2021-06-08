@@ -55,7 +55,7 @@ uint8_t bestpatterns[] = {
     // 190: big color concentric circle
     // 194: plasma1
     // 197: plasma2
-    14, 23, 26, 69, 82, 87, 103, 110, 111, 115, 124, 134, 146, 150, 155, 162, 187, 190, 194, 197 // new patterns to add to FastLED_IR
+    14, 23, 26, 69, 82, 87, 103, 110, 111, 115, 124, 134, 146, 150, 155, 162, 187, 190, 194, 197, // new patterns to add to FastLED_IR
     // 4: different from old, 189 is similar
     // 52, 60, 62 are  different demo in new tme, don't want it. 105 changed a lot, I like the old one
     4, 10, 11, 25, 52, 60, 62, 67, 70, 77, 80, 104, 105,  // good in original tmed

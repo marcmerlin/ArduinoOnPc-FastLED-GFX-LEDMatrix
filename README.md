@@ -157,4 +157,3 @@ make
 # Execute
 ./Adafruit_touchpaint
 ```
-

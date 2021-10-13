@@ -44,11 +44,14 @@ ifneq ($(shell uname -m |grep arm),)
 CXXFLAGS += -DRPIRGBPANEL
 ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
 CXXFLAGS += -DRPI4
+CXXFLAGS += -DRPI
 else
 ifneq ($(shell grep 'Raspberry Pi 3' /proc/device-tree/model),)
 CXXFLAGS += -DRPI3
+CXXFLAGS += -DRPI
 else
 CXXFLAGS += -DRPILT3
+CXXFLAGS += -DRPI
 endif
 endif
 #pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"

@@ -42,6 +42,9 @@ https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/
 
 
 ### SDL Driver
+The bundled modified FastLED library in git submodules adds an SDL driver which is then used
+by FastLED NeoMatrix
+
 Please see this code to see how to use the driver:
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L48
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L268
@@ -53,6 +56,8 @@ Because the SDL driver is much faster than talking to real FastLED, the code for
 ![103_demo_snaps](https://user-images.githubusercontent.com/1369412/71480163-abe52200-27ac-11ea-9cb1-f4d23bdf96ac.jpg)
 
 ### X11 Driver
+git submodules should retrieve the driver for you: https://github.com/marcmerlin/FastLED_TFTWrapper_GFX/
+
 Please see this code to see how to use the driver. It is slower than SDL and left because it was the
 original option available with this code. If SDL works for you, you should use it instead:
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L44
@@ -60,6 +65,8 @@ original option available with this code. If SDL works for you, you should use i
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L716
 
 ### Rpi RGBPanel Driver
+git submodules should retrieve the driver for you: https://github.com/marcmerlin/FastLED_RPIRGBPanel_GFX
+
 Please see this code to see how to use the driver (this is for rPi with rpi-rgb-panel):
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L40
 * https://github.com/marcmerlin/FastLED_NeoMatrix_SmartMatrix_LEDMatrix_GFX_Demos/blob/4436f8b5a71ceea4ef480f75f83b811b037c2cf6/neomatrix_config.h#L293

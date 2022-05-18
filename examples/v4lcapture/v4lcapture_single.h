@@ -307,7 +307,6 @@ static void open_device(void)
         }
 }
 
-#ifndef V4LCAPTURE_INCLUDE
 static void stop_capturing(void)
 {
         enum v4l2_buf_type type;
@@ -316,6 +315,8 @@ static void stop_capturing(void)
 	if (-1 == xioctl(fd, VIDIOC_STREAMOFF, &type))
 		errno_exit("VIDIOC_STREAMOFF");
 }
+
+#ifndef V4LCAPTURE_INCLUDE
 
 static void uninit_device(void)
 {

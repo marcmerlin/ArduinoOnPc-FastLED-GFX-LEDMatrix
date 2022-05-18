@@ -5,14 +5,6 @@
 
 
 
-void setup()
-{
-    dev_name = "/dev/video4";
-    open_device();
-    init_device();
-    start_capturing();
-    matrix_setup();
-}
 
 void yuv2rgb(uint8_t y, uint8_t u, uint8_t v, uint8_t *r, uint8_t *g, uint8_t *b) {
     int16_t R, G, B;
@@ -73,10 +65,19 @@ void v4l2fb() {
 
 void loop()
 {
+    start_capturing();
     mainloop();
+    stop_capturing();
     v4l2fb();
     matrix->show();
     Serial.println("Loop");
 }
 
 
+void setup()
+{
+    dev_name = "/dev/video0";
+    open_device();
+    init_device();
+    matrix_setup();
+}

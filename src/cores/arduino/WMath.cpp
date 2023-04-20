@@ -21,7 +21,7 @@ extern "C" {
   #include "stdint.h"
 }
 
-extern void randomSeed( uint32_t dwSeed )
+extern void randomSeed( unsigned long dwSeed )
 {
   if ( dwSeed != 0 )
   {

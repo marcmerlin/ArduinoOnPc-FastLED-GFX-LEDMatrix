@@ -326,10 +326,10 @@ size_t Print::printFloat(double number, uint8_t digits)
 {
     size_t n = 0;
 
-    if(isnan(number)) {
+    if(std::isnan(number)) {
         return print("nan");
     }
-    if(isinf(number)) {
+    if(std::isinf(number)) {
         return print("inf");
     }
     if(number > 4294967040.0) {

@@ -24,7 +24,7 @@
 #include "Arduino.h"
 #include "WString.h"
 #include "stdlib_noniso.h"
-#include "esp32-hal-log.h"
+//#include "esp32-hal-log.h"
 
 /*********************************************/
 /*  Constructors                             */
@@ -108,7 +108,7 @@ String::String(float value, unsigned int decimalPlaces) {
         free(buf);
     } else {
         *this = "nan";
-        log_e("No enought memory for the operation.");
+//        log_e("No enought memory for the operation.");
     }
 }
 
@@ -120,7 +120,7 @@ String::String(double value, unsigned int decimalPlaces) {
         free(buf);
     } else {
         *this = "nan";
-        log_e("No enought memory for the operation.");
+//        log_e("No enought memory for the operation.");
     }
 }
 
@@ -762,7 +762,7 @@ void String::replace(const String &find, const String &replace) {
         if(size == len())
             return;
         if(size > capacity() && !changeBuffer(size)) {
-            log_w("String.Replace() Insufficient space to replace string");
+            //log_w("String.Replace() Insufficient space to replace string");
             return;
         }
         int index = len() - 1;

@@ -1,0 +1,3 @@
+Please link your prefered version of the lib to rpi-rgb-led-matrix
+The submodule is in a different dir to allow for local branches and patches on each
+device without affecting future commits.

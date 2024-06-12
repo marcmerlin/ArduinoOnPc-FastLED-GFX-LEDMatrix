@@ -25,6 +25,3 @@
 [submodule "libraries/LEDSprites"]
 	path = libraries/LEDSprites
 	url = https://github.com/AaronLiddiment/LEDSprites/
-[submodule "libraries/LEDText"]
-	path = libraries/LEDText
-	url = https://github.com/AaronLiddiment/LEDText

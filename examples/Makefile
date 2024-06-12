@@ -5,6 +5,8 @@ LINUX_RENDERER_SDL = yes
 # SDL is even too fast compared to regular neopixels, so we introduce
 # a configurable delay here
 LINUX_RENDERER_SDL_MAIN_DELAY = 10
+# RPI4
+#LINUX_RENDERER_SDL_MAIN_DELAY = 40
 
 ARDUINO_LIBS += SPI
 ARDUINO_LIBS += FastLED

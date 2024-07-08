@@ -96,5 +96,5 @@ uint8_t bestpatterns[] = {
 #define LATCHA              23
 #define LATCHB              14
 
-int16_t pattern = 1;//this picks the pattern to start with...
+int16_t pattern = 82;//this picks the pattern to start with...
 // --------------------------- Config End ----------------------------------

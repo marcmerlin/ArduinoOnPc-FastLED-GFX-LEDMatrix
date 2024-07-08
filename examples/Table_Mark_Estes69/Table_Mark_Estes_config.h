@@ -60,7 +60,7 @@ uint8_t bestpatterns[] = {
     // 52, 60, 62 are  different demo in new tme, don't want it. 105 changed a lot, I like the old one
     4, 10, 11, 25, 52, 60, 62, 67, 70, 77, 80, 104, 105,  // good in original tmed
 
-    3, 17, 19, 20, 22, 45, 53, 55, 58, 59, 66, 72, 73, 75, 79, 81, 86, 88, 89, 94, 96, 98, 101, 102, 107, 108, 109, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 139, 141, 143, 144, 145, 147, 149, 151, 158, 184, // good but not picked for FastLED_IR
+    3, 17, 19, 20, 22, 45, 53, 55, 58, 59, 66, 72, 73, 75, 79, 81, 86, 88, 89, 94, 98, 101, 102, 107, 108, 109, 112, 113, 114, 118, 119, 120, 121, 126, 128, 131, 139, 141, 143, 144, 145, 147, 149, 151, 158, 184, // good but not picked for FastLED_IR
 
 // Aurora does not work well at resolutions over 256 wide or high or more than 64K pixels.
 // For higher res displays, do not show Aurora demos.

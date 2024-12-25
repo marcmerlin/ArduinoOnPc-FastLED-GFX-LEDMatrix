@@ -40,7 +40,7 @@ LDFLAGS += -pthread                # include linux thread library
 
 # Copy a string like these in this file: M384BY256 M192BY160 M128BY192
 CXXFLAGS += -DGFXDISPLAY_$(shell cat /root/NM/gfxdisplay)
-ifneq ($(shell uname -m |grep arm),)
+ifneq ($(shell uname -m |grep -E '(arm|aarch64)'),)
 CXXFLAGS += -DRPIRGBPANEL
 ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
 CXXFLAGS += -DRPI4

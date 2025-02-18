@@ -40,27 +40,36 @@ LDFLAGS += -pthread                # include linux thread library
 
 # Copy a string like these in this file: M384BY256 M192BY160 M128BY192
 CXXFLAGS += -DGFXDISPLAY_$(shell cat /root/NM/gfxdisplay)
+
 ifneq ($(shell uname -m |grep -E '(arm|aarch64)'),)
-CXXFLAGS += -DRPIRGBPANEL
-ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
-CXXFLAGS += -DRPI4
-CXXFLAGS += -DRPI
+    CXXFLAGS += -DRPIRGBPANEL
+    ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
+	CXXFLAGS += -DRPI4
+	CXXFLAGS += -DRPI
+    else
+	ifneq ($(shell grep 'Raspberry Pi 3' /proc/device-tree/model),)
+	    CXXFLAGS += -DRPI3
+	    CXXFLAGS += -DRPI
+	else
+	    # for some reason grep thinks that file is binary, -a to override
+	    ifneq ($(shell grep -a 'Raspberry Pi Zero 2' /proc/device-tree/model),)
+		CXXFLAGS += -DRPI3
+		CXXFLAGS += -DRPI02W
+		CXXFLAGS += -DRPI
+	    else
+		CXXFLAGS += -DRPILT3
+		CXXFLAGS += -DRPI
+	    endif
+	endif
+    endif
+
+    #pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"
+    LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
 else
-ifneq ($(shell grep 'Raspberry Pi 3' /proc/device-tree/model),)
-CXXFLAGS += -DRPI3
-CXXFLAGS += -DRPI
-else
-CXXFLAGS += -DRPILT3
-CXXFLAGS += -DRPI
-endif
-endif
-#pragma message "ARDUINOONPC building on ARM (guessing rPi), will link against rgbmatrix"
-LDFLAGS += -L$(NATIVE_ROOT)/rpi-rgb-led-matrix/lib -lrgbmatrix -lrt
-else
-ifeq ($(LINUX_RENDERER_SDL),yes)
-CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags) -DLINUX_RENDERER_SDL -DLINUX_RENDERER_SDL_MAIN_DELAY=$(LINUX_RENDERER_SDL_MAIN_DELAY)
-LDFLAGS += $(shell sdl2-config --libs)
-endif
+    ifeq ($(LINUX_RENDERER_SDL),yes)
+	CXXFLAGS += -DFASTLED_SDL $(shell sdl2-config --cflags) -DLINUX_RENDERER_SDL -DLINUX_RENDERER_SDL_MAIN_DELAY=$(LINUX_RENDERER_SDL_MAIN_DELAY)
+	LDFLAGS += $(shell sdl2-config --libs)
+    endif
 endif
 
 DEPDIR := $(BUILD_ROOT)

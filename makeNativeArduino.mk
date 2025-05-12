@@ -43,11 +43,11 @@ CXXFLAGS += -DGFXDISPLAY_$(shell cat /root/NM/gfxdisplay)
 
 ifneq ($(shell uname -m |grep -E '(arm|aarch64)'),)
     CXXFLAGS += -DRPIRGBPANEL
-    ifneq ($(shell grep 'Raspberry Pi 4' /proc/device-tree/model),)
+    ifneq ($(shell grep -a 'Raspberry Pi 4' /proc/device-tree/model),)
 	CXXFLAGS += -DRPI4
 	CXXFLAGS += -DRPI
     else
-	ifneq ($(shell grep 'Raspberry Pi 3' /proc/device-tree/model),)
+	ifneq ($(shell grep -a 'Raspberry Pi 3' /proc/device-tree/model),)
 	    CXXFLAGS += -DRPI3
 	    CXXFLAGS += -DRPI
 	else

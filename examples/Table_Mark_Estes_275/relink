@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dir="$(basename $(pwd))"
+
+for i in Jove24.c Moon.c Table_Mark_Estes_Impl.h blue24c.c blue48.c bluea24bf.c earth24.c earth48.c earthb24.c earthb48.c gimpbitmap.h green24.c green48.c gring24.c heart24.c heart48.c icepl24.c monarch24.c monarch48.c newgbf24.c orange48.c  "$dir.ino" Table_Mark_Estes_config.h
+do
+    ln -sf ../NeoMatrix_Demos_Private/TME/"$dir/$i"
+done
+
+for i in Makefile neomatrix_config.h; do ln -sf ../$i; done

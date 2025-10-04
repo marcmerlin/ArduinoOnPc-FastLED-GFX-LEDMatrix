@@ -2,7 +2,7 @@
 
 dir="$(basename $(pwd))"
 
-for i in Jove24.c Moon.c Table_Mark_Estes_Impl.h blue24c.c blue48.c bluea24bf.c earth24.c earth48.c earthb24.c earthb48.c gimpbitmap.h green24.c green48.c gring24.c heart24.c heart48.c icepl24.c monarch24.c monarch48.c newgbf24.c orange48.c  "$dir.ino" Table_Mark_Estes_config.h
+for i in Jove24.h Moon.h Table_Mark_Estes_Impl.h blue24c.h blue48.h bluea24bf.h earth24.h earth48.h earthb24.h earthb48.h gimpbitmap.h green24.h green48.h gring24.h heart24.h heart48.h icepl24.h monarch24.h monarch48.h newgbf24.h orange48.h  "$dir.ino" Table_Mark_Estes_config.h
 do
     ln -sf ../NeoMatrix_Demos_Private/TME/"$dir/$i"
 done

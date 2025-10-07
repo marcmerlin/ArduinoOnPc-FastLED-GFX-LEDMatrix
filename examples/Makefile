@@ -4,7 +4,7 @@ CUSTOM_LIBS := libraries
 LINUX_RENDERER_SDL = yes
 # SDL is even too fast compared to regular neopixels, so we introduce
 # a configurable delay here
-LINUX_RENDERER_SDL_MAIN_DELAY = 10
+LINUX_RENDERER_SDL_MAIN_DELAY = 2
 
 ARDUINO_LIBS += SPI
 ARDUINO_LIBS += FastLED

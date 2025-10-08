@@ -23,3 +23,11 @@ ARDUINO_LIBS += LEDText
 
 BUILD_ROOT := build
 include ../../makeNativeArduino.mk
+
+
+all:
+	@echo
+
+format:
+	@astyle --style=google --add-braces --indent=spaces=4 Table*
+

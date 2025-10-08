@@ -4,6 +4,9 @@ Blog posts with details:
 * Raspberry Pi/RGB Panels: http://marc.merlins.org/perso/arduino/post_2020-01-01_Running-FastLED_-Adafruit_GFX_-and-LEDMatrix-code-on-High-Resolution-RGBPanels-with-a-Raspberry-Pi.html
 * Linux/Intel and X11/SDL: http://marc.merlins.org/perso/arduino/post_2020-01-24_Running-Arduino-code-with-2D-FastLED_-Adafruit_GFX_-and-LEDMatrix-displays-on-Linux.html
 
+## Where from?
+- https://github.com/ChrisMicro/ArduinoOnPc provided (slow but working) tft X11 emulation
+- https://github.com/benpicco/FastLEDonPc which uses https://github.com/benpicco/FastLED provided SDL FastLED matrix emulation
 
 ## What?
 

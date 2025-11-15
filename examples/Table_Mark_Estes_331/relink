@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dir="$(basename $(pwd))"
+
+for i in ../NeoMatrix_Demos_Private/TME/"$dir"/*
+do
+    ln -s "$i" .
+done
+
+for i in Makefile neomatrix_config.h; do ln -sf ../$i; done

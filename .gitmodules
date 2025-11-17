@@ -34,3 +34,6 @@
 [submodule "rpi-rgb-led-matrix.git"]
 	path = rpi-rgb-led-matrix.git
 	url = https://github.com/hzeller/rpi-rgb-led-matrix/
+[submodule "examples/NeoMatrix_Demos_Private"]
+	path = examples/NeoMatrix_Demos_Private
+	url = git@github.com:marcmerlin/NeoMatrix_Demos_Private.git

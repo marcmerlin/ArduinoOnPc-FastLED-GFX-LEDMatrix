@@ -1,56 +1,59 @@
 
 // --------------------------- Config Start --------------------------------
 //Erandomly slowdown animation. Nice in principle, but not when debugging performance
-#define randomSLOWME
+//#define randomSLOWME
+
+//#define MIXIT true
+#define MIXIT false
 
 // Control whether pattern order isErandom from the start or after one pass
-#define MIXIT_AFTER_FIRST_PASS
+//#define MIXIT_AFTER_FIRST_PASS
 
 // write the pattern number in upper left (makes more sense on higher res displays)
-//#define SHOW_PATTERN_NUM
+#define SHOW_PATTERN_NUM
 //
 // Display FPS computed by Framebuffer::GFX
-//#define DISPLAY_FPS
-#define FADE_IN
+#define DISPLAY_FPS
+//#define FADE_IN
 
-#define FADE_OUT
+//#define FADE_OUT
 // Some pattern transitions look weird without a clear in between
-//#define CLEAR_BETWEEN_PATTERNS
+#define CLEAR_BETWEEN_PATTERNS
 
 // This allows a selection of only my favourite patterns.
 // Comment this out to get all the patterns -- merlin
-#define SUBSETPATTERNS
+//#define SUBSETPATTERNS
 #ifdef SUBSETPATTERNS
 
-uint8_t subsetpatterns[] = {    
+uint8_t subsetpatterns[] = {
 
 
-                           2, 3, 4, 5, 6, 6, 7, 10, 11, 11, 12, 13, 14, 15, 16, 17,  19, 20, 21, 22, 23, 24, 26, 27, 28, 28, 29, 30, 30,
-                           31, 31, 32, 33,  35, 35, 36, 37, 38, 39, 40, 41, 41, 43, 44, 45,  47, 48, 48,  49, 50, 51, 51, 52, 54, 56, 57, 58, 59, 61, 65, 66, 67, 68, 70, 71, 74, 75, 76, 77, 81,
-                           84, 88, 92, 95,  101, 102, 103, 104, 105, 107, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,  120, 121, 122, 123, 124, 126, 127, 128, 129, 130, 131,  133, 134, 135,
-                           138, 139, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156, 157, 157, 158, 159, 160, 162, 165,  167, 167,  169,   173, 174, 175,
-                           176, 177, 178, 179, 180, 182, 183,  185, 186, 187, 188, 189, 190, 191, 192, 193,  198, 199, 200, 201,
-                           202, 203, 204, 205, 206, 207, 208, 209
-                        
-                   
+  2, 3, 4, 5, 6, 6, 7, 10, 11, 11, 12, 13, 14, 16, 17,  19, 20, 21, 22, 23, 24, 26, 27, 28, 28, 29, 30, 30,
+  31, 31, 32, 33, 35, 35, 36, 37, 38, 39, 40, 41, 41, 43,  45,  47, 48, 48,  49, 50, 51, 51, 52, 54, 56, 57, 58, 59, 61, 65, 66, 67,
+  68, 70, 71, 74, 75, 76, 77, 81, 84, 88, 92, 95,  101, 102, 103, 104, 105, 107, 109, 110, 111, 112,  113, 114, 115, 116, 117, 118,
+  119,  120, 121, 122, 123, 124, 126, 127, 128, 129, 130, 131,  133, 134, 135, 138, 139, 145, 146, 147, 148, 149, 151, 152, 153,
+  154, 155, 156, 157, 157, 158, 159, 160, 161, 162, 165,  169,   173, 174, 175, 175, 176, 176, 177, 177, 178, 179, 180, 182, 183, 184, 184, 185,
+  186, 186, 186, 187, 188, 189, 190, 191, 192, 193,  197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 207, 208, 209, 210, 211, 212
 
-                      };
+
+
+};
 
 
 /*
- * 
- * 
- *    22, 25, 27,  28, 29,  30, 31, 31, 33,   35, 36, 37, 38, 39,  41, 41, 
-                           43,  45,  47, 48,  49,  51, 51, 52, 52, 100, 106, 138, 153, 154, 155, 156,  157, 165,  188, 189, 190, 
+
+
+      22, 25, 27,  28, 29,  30, 31, 31, 33,   35, 36, 37, 38, 39,  41, 41,
+                           43,  45,  47, 48,  49,  51, 51, 52, 52, 100, 106, 138, 153, 154, 155, 156,  157, 165,  188, 189, 190,
                            202, 209
-                           
+
   2, 3, 4, 5, 6, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17,  19, 20, 21, 22, 23, 24, 26, 27, 28, 28, 29, 30, 30,
                            31, 31, 33,  35, 35, 36, 37, 38, 39, 40, 41, 41, 43, 44, 45,  47, 48, 48,  49, 50, 51, 51, 52, 54, 56, 57, 58, 59, 61, 65, 66, 67, 68, 70, 71, 74, 75, 76, 77, 81,
                            84, 88, 92, 95,  101, 102, 103, 104, 105, 107, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119,  120, 121, 122, 123, 124, 126, 127, 128, 129, 130, 131,  133, 134, 135,
                            138, 139, 145, 146, 147, 148, 149, 151, 153, 154, 155, 156, 157, 157, 158, 159, 160, 162, 165,  167, 167,  169,   173, 174, 175,
                            176, 177, 178, 179, 180, 182, 183,  185, 186, 187, 188, 189, 190, 191, 192, 193,  198, 199, 200, 201,
                            202, 203, 204, 205, 206, 207, 208, 209
-                           */
+*/
 
 
 #define lastpatindex sizeof(subsetpatterns)
@@ -60,7 +63,7 @@ uint8_t subsetpatterns[] = {
 #endif
 
 // By default audio support is on for what's expected to be teensy.
-#define TME_AUDIO
+//#define TME_AUDIO
 // But turn it off on ARDUINOONPC / Raspberry Pi and ESP32
 
 
@@ -73,10 +76,10 @@ uint8_t subsetpatterns[] = {
 //#include <EasyTransfer.h>// used for exchange with 2nd arduino for audio processing
 #endif
 
-#define TIMING              180//140
+#define TIMING              90//180
 //seconds per pattern
 //#define LATCHA              23
 //#define LATCHB              14
 // this picks the pattern to start with
-int16_t pattern = 155;
+int16_t pattern = 1;
 // --------------------------- Config End ----------------------------------

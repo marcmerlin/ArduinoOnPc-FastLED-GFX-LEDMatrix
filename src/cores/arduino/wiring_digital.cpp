@@ -16,7 +16,7 @@ void pinMode(uint8_t pin, uint8_t mode)
 {
 	std::cout << "pinMode pin " << (int)pin << " set to : ";
 
-	if(mode==INPUT) std::cout << "INPU" << std::endl;
+	if(mode==INPUT) std::cout << "INPUT" << std::endl;
 	if(mode==OUTPUT) std::cout << "OUTPUT" << std::endl;
 	if(mode==INPUT_PULLUP) std::cout << "INPUT_PULLUP" << std::endl;
 }
